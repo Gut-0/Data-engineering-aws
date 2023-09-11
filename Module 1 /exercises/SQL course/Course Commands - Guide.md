@@ -5,6 +5,8 @@ practice.**
 
 > **I put some comments along the activities, they are in boxes like this one.**
 
+### Index
+
 - [ ] Unmarked
 - [x] [Basic Select Commands](#select-commands)
 - [x] [Challenge 1](#challenge-1)

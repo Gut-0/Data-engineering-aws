@@ -1,9 +1,11 @@
-### Sales Dashboard
+## Sales Dashboard
 
 > **This is the first project of the course, which involves create a sales dashboard about all database we have explored
 in the course**
 
-- [x] [(Result)](#result)
+### Result
+
+![Exel Graphic result](graphic.png)
 
 ---
 
@@ -116,9 +118,5 @@ where visit_page_date between '2021-08-01' and '2021-08-31'
 group by dia_semana
 order by dia_semana
 ````
-
-## Result
-
-![Exel Graphic result](graphic.png)
 ---
 
