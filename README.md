@@ -1,6 +1,6 @@
 # Meu Perfil
 
-Olá! Meu nome é Gustavo Borges, e atualmente resido em Chapecó, Santa Catarina. Sou estudante da Unochapeco, onde estou
+Olá! Meu nome é Gustavo Borges, e atualmente resido em Chapecó, Santa Catarina. Tenho 18 anos e sou estudante da Unochapeco, onde estou
 cursando Análise e Desenvolvimento de Sistemas no 2º semestre.
 
 ## Experiência e Background
@@ -16,9 +16,4 @@ explorando novos lugares sempre que posso.
 
 ## Aprendizado Atual
 
-Neste momento, estou aproveitando bastante as aulas sobre Docker, um conteúdo novo e empolgante para mim. Além disso,
-estou revisando meus conhecimentos em SQL, consolidando uma base sólida para minha jornada na área de desenvolvimento.
-
-Continue acompanhando este README para saber mais sobre os módulos e projetos que estou explorando!
-
-[Irei incluir mais seções à medida que avançar no curso]
+Neste momento, estou desenvolvendo o primeiro desafio da trilha, com o objetivo de criar um data warehouse.
