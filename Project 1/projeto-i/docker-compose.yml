@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  postgresdb:
+    restart: always
+    networks:
+      - fast_pb_da
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./environments/postgres.env
+    volumes:
+      - ./postgres-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+  mongodb:
+    restart: always
+    networks:
+      - fast_pb_da
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb-init/init.js:/docker-entrypoint-initdb.d/init.js:ro
+
+
+  python_app:
+    networks:
+      - fast_pb_da
+    build:
+      context: python_etl/
+      dockerfile: Dockerfile
+    depends_on:
+      - postgresdb
+      - mongodb
+    volumes:
+      - ./python_etl:/python_etl
+
+
+networks:
+  fast_pb_da:
