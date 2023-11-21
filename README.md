@@ -8,7 +8,7 @@ cursando Análise e Desenvolvimento de Sistemas no 2º semestre.
 
 Estudo programação desde os 13 anos, porém somente aos 16 anos recebi a oportunidade de atuar com o WordPress,
 desenvolvendo sites. Obtive ótimas experiências. Depois, migrei para o desenvolvimento de software, atuando com Angular
-e Laravel. Atualmente estou estudanto e me aprofundando na area de dados.
+e Laravel. Atualmente estou estudando e me aprofundando na area de dados.
 
 Uma das experiências mais marcantes que tive foi um ataque à base de clientes que tínhamos em WordPress. A maioria (se
 não todos) os sites foram infectados, e alguns dados foram perdidos. Resumidamente, os sites foram usados como um
@@ -20,8 +20,6 @@ alimentação, e os treinos são sagrados para mim.
 
 ## Aprendizado Atual
 
-Após concluir os cursos da AWS, obtive uma compreensão mais aprofundada sobre a infraestrutura, organização, gerenciamento, segurança e diversos outros processos relacionados. No Projeto II,
-desenvolvi um ETL para o envio de CSV ao bucket S3 usando Docker, integrando a biblioteca Dynaconf para o gerenciamento
-seguro de credenciais. Avancei para a criação da função Lambda, implementando uma layer para a biblioteca Requests,
-facilitando requisições GET e a obtenção de arquivos JSON. Este progresso destaca meu comprometimento com a eficiência e
-segurança do projeto em curso.
+A criação do Data Lake integrado aos serviços da AWS foram uma experiência enriquecedora, na qual me aprofundei
+em diversos conteúdos, assistindo aos cursos na AWS Skill Builder e após, integrando os serviços necessários para o
+desenvolvimento do projeto.
