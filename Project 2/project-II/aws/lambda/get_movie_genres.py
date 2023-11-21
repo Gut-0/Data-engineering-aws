@@ -1,6 +1,7 @@
-import boto3
 import json
 import os
+
+import boto3
 import requests
 
 
@@ -37,7 +38,7 @@ def insert_json_s3(s3_client, json_file: dict, file_name: str):
     """
     try:
         response = s3_client.put_object(
-            Bucket='data-lake-fast-pb-compassuol', Key=f"Raw/TMDB/JSON/Top_Rated_Movies/2023/11/13/{file_name}",
+            Bucket='data-lake-fast-pb-compassuol', Key=f"Raw/TMDB/JSON/Movie_Genres_List/2023/11/16/{file_name}",
             Body=json.dumps(json_file)
         )
         status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
@@ -51,6 +52,7 @@ def insert_json_s3(s3_client, json_file: dict, file_name: str):
 def main():
     """
     Initiate an API request to retrieve the required JSON files.
+
     :return: None.
     """
     s3_client = create_boto_connection()
@@ -63,11 +65,11 @@ def main():
     }
 
     try:
-        for i in range(1, 6):
-            url = f"https://api.themoviedb.org/3/movie/top_rated?page={i}"
-            json_response = requests.get(url, headers=headers).json()
-            insert_json_s3(s3_client, json_response, f"top_rated_movies_pt{i}.json")
+        url = "https://api.themoviedb.org/3/genre/movie/list"
+        json_response = requests.get(url, headers=headers).json()
+        insert_json_s3(s3_client, json_response, "movie_genres_list.json")
 
         print('Process completed.')
+
     except Exception as e:
-        print('Error Getting JSON files:', e)
+        print('Error Getting JSON file:', e)

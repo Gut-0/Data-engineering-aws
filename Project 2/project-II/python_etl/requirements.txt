@@ -1,3 +1,4 @@
 dynaconf
 pandas
-boto3
+fsspec
+s3fs

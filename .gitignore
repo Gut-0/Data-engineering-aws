@@ -163,3 +163,7 @@ cython_debug/
 #.idea/
 
 /Module 1 /exercises/Python course/.idea/
+/Project 2/project-II/python_etl/input/movies.csv
+/Project 2/project-II/python_etl/input/series.csv
+/Project 2/project-II/aws/glue/trusted/input/
+/Project 2/project-II/aws/glue/trusted/json/

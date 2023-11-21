@@ -1,25 +1,21 @@
-import io
-
-import boto3
 import pandas as pd
 
 from config.base import settings
 
 
-def create_boto_connection():
+def get_aws_credentials():
     """
-    This function creates a S3 connection using boto3.
+    The code uses S3FS filesystem interface for S3.
 
-    :return: botocore.client.S3 or None.
+    :return: dict or None.
     """
     try:
-        s3_client = boto3.client(
-            "s3",
-            aws_access_key_id=(settings.aws_credentials.get('access_key')),
-            aws_secret_access_key=(settings.aws_credentials.get('secret_key')),
-            aws_session_token=(settings.aws_credentials.get('session_token'))
-        )
-        return s3_client
+        aws_credentials = {
+            "key": settings.aws_credentials.get('access_key'),
+            "secret": settings.aws_credentials.get('secret_key'),
+            "token": settings.aws_credentials.get('session_token')
+        }
+        return aws_credentials
     except Exception as e:
         print('Error Creating Boto3 Connection:', e)
         return None
@@ -27,7 +23,7 @@ def create_boto_connection():
 
 def insert_csv_s3(df: pd.DataFrame, df_target: str, file_name: str) -> None:
     """
-    Receive the input DataFrame and use boto3 connection to insert the file into S3 Bucket.
+    Receive the input DataFrame and use 'to_csv' method to insert the file into S3 Bucket.
 
     :param df: (pd.core.frame.DataFrame): The input DataFrame.
     :param df_target: (str): The S3 path/file.
@@ -35,21 +31,10 @@ def insert_csv_s3(df: pd.DataFrame, df_target: str, file_name: str) -> None:
     :return: None.
     """
     try:
-        s3_client = create_boto_connection()
+        aws_credentials = get_aws_credentials()
+        df.to_csv(df_target, sep='|', index=False, encoding='UTF-8', storage_options=aws_credentials)
 
-        with io.StringIO() as csv_buffer:
-            df.to_csv(csv_buffer, index=False)
-
-            response = s3_client.put_object(
-                Bucket='data-lake-fast-pb-compassuol', Key=df_target,
-                Body=csv_buffer.getvalue()
-            )
-            status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
-
-            if status == 200:
-                print(f"Successful Uploaded {file_name} to S3. Status - {status}")
-            else:
-                print(f"Unsuccessful Uploaded {file_name} to S3. Status - {status}")
+        print(f"Successful Uploaded {file_name} to S3. Status - 200")
     except Exception as e:
         print('Error Uploading CSV to S3:', e)
 
@@ -61,7 +46,7 @@ def main():
        :return: None.
        """
     try:
-        df_target = 'Raw/Local/CSV/Movies/2023/11/11/movies.csv'
+        df_target = 's3a://data-lake-fast-pb-compassuol/Raw/Local/CSV/Movies/2023/11/15/movies.csv'
         df = pd.read_csv('input/movies.csv', sep='|', dtype={
             'id': str,
             'tituloPincipal': str,
@@ -81,7 +66,7 @@ def main():
         })
         insert_csv_s3(df, df_target, 'movies')
 
-        df_target = 'Raw/Local/CSV/Series/2023/11/11/series.csv'
+        df_target = 's3a://data-lake-fast-pb-compassuol/Raw/Local/CSV/Series/2023/11/15/series.csv'
         df = pd.read_csv('input/series.csv', sep='|', dtype={
             'id': str,
             'tituloPincipal': str,
