@@ -17,7 +17,7 @@ def get_aws_credentials():
         }
         return aws_credentials
     except Exception as e:
-        print('Error Creating Boto3 Connection:', e)
+        print('Error Getting Connection:', e)
         return None
 
 

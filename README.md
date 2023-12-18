@@ -20,6 +20,7 @@ alimentação, e os treinos são sagrados para mim.
 
 ## Aprendizado Atual
 
-A criação do Data Lake integrado aos serviços da AWS foram uma experiência enriquecedora, na qual me aprofundei
-em diversos conteúdos, assistindo aos cursos na AWS Skill Builder e após, integrando os serviços necessários para o
-desenvolvimento do projeto.
+Finalizei o programa e realizei a prova. Foi um intensivo de estudos, só tenho a agradecer pela oportunidade de participar do programa.
+Quanto aos projetos, tive a experiencia de trabalhar com a cloud.
+Quanto ao exame CLF-C02 eu passei, e assim que receber a certificação, anexo aqui.
+Obrigado!
