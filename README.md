@@ -7,17 +7,17 @@ This repository contains work completed as part of the AWS Data Engineering Scho
 
 ### Projects and Modules:
 
-[Module 1]: Certificates and exercises (Docker, Python and SQL).
-[Module 2]: Certificates and exercises (AWS resources and cloud computing).
-[Project 1/project-I]: Small-scale Data Warehouse using Python for ETL.
-[Project 2/project-II]: Data Lake integrated with AWS services.
+[Module 1]: Certificates and exercises (Docker, Python and SQL).\
+[Module 2]: Certificates and exercises (AWS resources and cloud computing).\
+[Project 1/project-I]: Small-scale Data Warehouse using Python for ETL.\
+[Project 2/project-II]: Data Lake integrated with AWS services. \
 
 ### Skills Demonstrated:
 
-Data Engineering: ETL processes, data modeling, data warehousing, data lake, database modeling
-AWS Cloud Services: S3, Glue, Lambda, IAM, DynamoDB, EC2, CloudWatch
-Programming Languages: Python, SQL, Docker, PostgreSQL, MongoDB, 
-Big Data Technologies: Spark, Pandas
+**Data Engineering:** ETL processes, data modeling, data warehousing, data lake, database modeling \
+**AWS Cloud Services:** S3, Glue, Lambda, IAM, DynamoDB, EC2, CloudWatch \
+**Programming Languages:** Python, SQL, Docker, PostgreSQL, MongoDB, \
+**Big Data Technologies:** Spark, Pandas \
 
 ### Learning Resources:
 
