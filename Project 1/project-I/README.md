@@ -1,4 +1,4 @@
-# Project I - Data Engineering with AWS
+# Project I - Data Engineering Pipeline
 
 This project focuses on extracting data from MongoDB, transforming it, and loading it into a PostgreSQL database, all within a Docker environment.
 
